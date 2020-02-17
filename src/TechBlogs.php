@@ -8,7 +8,7 @@ class TechBlogs
     {
         try {
             // Access to DB is very slow
-            sleep(5);
+            sleep(0);
         } catch (\RuntimeException $exception) {
             throw new \RuntimeException('Unexpected exception');
         }
