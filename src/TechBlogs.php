@@ -2,25 +2,28 @@
 
 namespace Quotebot;
 
+use RuntimeException;
+
 class TechBlogs
 {
-    public static function listAllBlogs(): array
+    public function listAllBlogs(): array
     {
         try {
             // Access to DB is very slow
             sleep(0);
-        } catch (\RuntimeException $exception) {
-            throw new \RuntimeException('Unexpected exception');
-        }
 
-        return [
-            'HackerNews',
-            'Reddit',
-            'TechCrunch',
-            'BuzzFeed',
-            'TMZ',
-            'TheHuffPost',
-            'GigaOM'
-        ];
+            return [
+                'HackerNews',
+                'Reddit',
+                'TechCrunch',
+                'BuzzFeed',
+                'TMZ',
+                'TheHuffPost',
+                'GigaOM'
+            ];
+
+        } catch (RuntimeException $exception) {
+            throw new RuntimeException('Unexpected exception');
+        }
     }
 }
